@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Resumen</h2>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Cantidad</th>
+                <th>Precio total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let producto of productosAgregados" data-id="{{producto.id}}">
+                    <th>{{producto.name}}</th>
+                    <th>{{producto.desc}}</th>
+                    <th>{{producto.price}}</th>
+                    <th><img class="images" width="70px" src={{producto.img}} /></th>
+                    <th> {{producto.cant}} </th>
+                    <th>  {{producto.total}} </th>
+                    <th> <button class="btn btn-danger"  (click)=eliminarProducto(producto.id) style="margin-left: 10px;">Eliminar</button></th>
+                </tr>
+              
+           
+        </tbody>
+        <tr>
+            <th><span> <button type="button" class="btn btn-success" (click)=comprar()>Comprar</button></span></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Precio Total Acumulado:</th>
+            <th><span  tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+                <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>{{suma()}}</button>
+              </span></th>
+              <th></th>
+        </tr>
+       
+
+       
+    </table>

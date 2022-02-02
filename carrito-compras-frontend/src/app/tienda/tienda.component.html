@@ -1,0 +1,29 @@
+
+<div class="container">
+    <h2>Tienda</h2>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos">
+                <th>{{producto.nombre}}</th>
+                <th>{{producto.descripcion}}</th>
+                <th>{{producto.precio}}</th>
+                <th><img class="images" width="70px" src={{producto.urlImagen}} /></th>
+                <th>
+                    <button class="btn btn-primary" (click)=mandarProducto(producto.idProducto)><fa-icon [icon]="carrito"></fa-icon></button>
+                </th>
+            </tr>
+        </tbody>
+       
+    </table>
+   
+    
+</div>

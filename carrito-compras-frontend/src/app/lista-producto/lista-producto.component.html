@@ -1,0 +1,29 @@
+
+<div class="container">
+    <h2>Lista Productos</h2>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos">
+                <th>{{producto.nombre}}</th>
+                <th>{{producto.descripcion}}</th>
+                <th>{{producto.precio}}</th>
+                <th><img class="images" width="70px" src={{producto.urlImagen}} /></th>
+                <th>
+                    <button class="btn btn-info" (click)=actualizarProducto(producto.idProducto)>Editar</button>
+                    <button class="btn btn-danger"  (click)=eliminarProducto(producto.idProducto) style="margin-left: 10px;">Eliminar</button>
+                </th>
+            </tr>
+        </tbody>
+       
+    </table>
+    
+</div>
